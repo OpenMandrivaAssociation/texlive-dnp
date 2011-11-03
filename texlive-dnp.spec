@@ -1,5 +1,11 @@
+# revision 15878
+# category Package
+# catalog-ctan undef
+# catalog-date undef
+# catalog-license undef
+# catalog-version undef
 Name:		texlive-dnp
-Version:	20111101
+Version:	20111103
 Release:	1
 Summary:	TeXLive dnp package
 Group:		Publishing
@@ -33,6 +39,7 @@ TeXLive dnp package.
 #-----------------------------------------------------------------------
 %files
 %{_texmfdistdir}/fonts/sfd/dnp/DNP.sfd
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -43,3 +50,5 @@ TeXLive dnp package.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
