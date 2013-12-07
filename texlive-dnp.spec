@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-dnp
 Version:	20111103
-Release:	3
+Release:	4
 Summary:	TeXLive dnp package
 Group:		Publishing
 URL:		http://tug.org/texlive
