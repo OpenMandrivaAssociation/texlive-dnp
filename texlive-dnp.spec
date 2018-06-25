@@ -5,7 +5,7 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-dnp
-Version:	20171106
+Version:	20180303
 Release:	1
 Summary:	TeXLive dnp package
 Group:		Publishing
