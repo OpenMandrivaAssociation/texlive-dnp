@@ -1,6 +1,6 @@
 Name:		texlive-dnp
 Version:	54074
-Release:	1
+Release:	2
 Summary:	TeXLive dnp package
 Group:		Publishing
 URL:		http://tug.org/texlive
