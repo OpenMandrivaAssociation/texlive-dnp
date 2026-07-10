@@ -1,37 +1,20 @@
-Name:		texlive-dnp
-Version:	54074
-Release:	2
-Summary:	TeXLive dnp package
+%global tl_name dnp
+%global tl_revision 54074
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	subfont numbers for DNP font encoding
 Group:		Publishing
-URL:		https://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dnp.r%{version}.tar.xz
+URL:		https://www.ctan.org/pkg/dnp
+License:	LPPL
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dnp.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive dnp package.
+part of the CJK package, ctan.org/pkg/cjk
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/sfd/dnp/DNP.sfd
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts %{buildroot}%{_texmfdistdir}
